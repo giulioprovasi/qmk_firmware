@@ -206,8 +206,8 @@ void oled_task_user(void) {
   oled_write(read_logo(), false);
 
   } else {
-    sprintf(wpm_str, "       WPM: %03d", get_current_wpm());
-    oled_write_ln(wpm_str, false);
+    // sprintf(wpm_str, "       WPM: %03d", get_current_wpm());
+    // oled_write_ln(wpm_str, false);
     oled_write(read_logo(), false);
   }
 }
