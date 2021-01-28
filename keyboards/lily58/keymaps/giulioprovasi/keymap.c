@@ -60,22 +60,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----+----+----+----+----+----.                  ,----+----+----+----+----+----.
  * |    | 1  | 2  | 3  | 4  | 5  |                  | 6  | 7  | 8  | 9  | 0  |    |
  * |----+----+----+----+----+----|                  |----+----+----+----+----+----|
- * |TAB | Q  | W  | F  | P  | B  |                  | J  | L  | U  | Y  |SCLN|BSPC|
+ * |TAB | Q  | W  | F  | P  | B  |                  | J  | L  | U  | Y  |SCLN|    |
  * |----+----+----+----+----+----|                  |----+----+----+----+----+----|
- * |SESC| A  | R  | S  | T  | G  |-----|      |-----| K  | N  | E  | I  | O  |SENT|
+ * |SESC| A  | R  | S  | T  | G  |-----|      |-----| K  | N  | E  | I  | O  |BSPC|
  * |----+----+----+----+----+----+LBRC |      |RBRC |----+----+----+----+----+----|
  * |OCTL| Z  | X  | C  | D  | V  |-----|      |-----| M  | H  |COMM|DOT |SLSH|RCTL|
  * `----+----+----+----+----+----/    /        \    \----+----+----+----+----+----'
- *             | LALT|LGUI|LOWER/SPL /          \SPR \RAISE|BSPC|     |
+ *             | LALT|LGUI|LOWER/SPC /          \ENT \RAISE|BSPC|     |
  *             `-----+----+----/----/            \----\----+----+-----'
  */
   [_COLEMAK] = LAYOUT( \
  /* _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, */
-    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______, \
-    KC_TAB , KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC, \
-    KC_SESC, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_K,    KC_N,    KC_E,    KC_I,    KC_O,    KC_SENT, \
+    XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX, \
+    KC_TAB , KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, XXXXXXX, \
+    KC_SESC, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_K,    KC_N,    KC_E,    KC_I,    KC_O,    KC_BSPC, \
     KC_OCTL, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_LBRC,          KC_RBRC, KC_M,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTL, \
-                               KC_LALT, KC_LGUI, KC_LOWR,  KC_SPL,           KC_SPR,  MO(RAISE),   KC_BSPC, _______ \
+                               KC_LALT, KC_LGUI, KC_LOWR,  KC_SPC,           KC_ENT, KC_RASE, KC_BSPC, XXXXXXX \
   ),
 
 /* QWERTY
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_QWERTY] = LAYOUT( \
  /* _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, */
-    KC_1,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,  \
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,  \
     KC_TAB , KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,  \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______,          _______, KC_M,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
@@ -183,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /* _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, */
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                              XXXXXXX, DF(0),   DF(1),   XXXXXXX, XXXXXXX, XXXXXXX, \
-    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,                             XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV,  KC_MNXT, KC_MPLY,  \
+    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,                             XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MNXT, KC_MPLY,  \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU,  KC_MUTE, \
                                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
   )
@@ -199,27 +199,45 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 // When you add source files to SRC in rules.mk, you can use functions.
-const char *read_layer_state(void);
 const char *read_logo(void);
-void set_keylog(uint16_t keycode, keyrecord_t *record);
-const char *read_keylog(void);
-const char *read_keylogs(void);
+//void set_keylog(uint16_t keycode, keyrecord_t *record);
+//const char *read_keylog(void);
+//const char *read_keylogs(void);
 
-// const char *read_mode_icon(bool swap);
-// const char *read_host_led_state(void);
-// void set_timelog(void);
-// const char *read_timelog(void);
+char wpm_str[10];
 
 void oled_task_user(void) {
   if (is_keyboard_master()) {
-    // If you want to change the display of OLED, you need to change here
-    oled_write_ln(read_layer_state(), false);
-    oled_write_ln(read_keylog(), false);
-    oled_write_ln(read_keylogs(), false);
-    //oled_write_ln(read_mode_icon(keymap_config.swap_lalt_lgui), false);
-    //oled_write_ln(read_host_led_state(), false);
-    //oled_write_ln(read_timelog(), false);
+    //oled_write_ln(read_keylog(), false);
+    //oled_write_ln(read_keylogs(), false);
+    //oled_scroll_left();  // Turns on scrolling
+    switch (biton32(layer_state)){
+      case _COLEMAK:
+          oled_write_ln_P(PSTR("       COLEMAK"), false);
+          break;
+      case _QWERTY:
+          oled_write_ln_P(PSTR("       QWERTY"), false);
+          break;
+      case _RAISE:
+          oled_write_ln_P(PSTR("       RAISE"), false);
+          break;
+      case _LOWER:
+          oled_write_ln_P(PSTR("       LOWER"), false);
+          break;
+      case _NUMPAD:
+          oled_write_ln_P(PSTR("       NUMPAD"), false);
+          break;
+      case _ADJUST:
+          oled_write_ln_P(PSTR("       ADJUST"), false);
+          break;
+      default:
+          oled_write_ln_P(PSTR("       ?????"), false);
+  }
+  oled_write(read_logo(), false);
+
   } else {
+    // sprintf(wpm_str, "       WPM: %03d", get_current_wpm());
+    // oled_write_ln(wpm_str, false);
     oled_write(read_logo(), false);
   }
 }
@@ -228,7 +246,7 @@ void oled_task_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
 #ifdef OLED_DRIVER_ENABLE
-    set_keylog(keycode, record);
+    // set_keylog(keycode, record);
 #endif
     // set_timelog();
   }
